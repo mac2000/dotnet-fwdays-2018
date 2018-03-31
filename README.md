@@ -84,6 +84,7 @@ Check it with `kubectl get horizontalpodautoscaler`
 
 Unfortunatelly at moment I was unable to make it work under local kubernetes so moving everything to cloud
 
+Load tests made by locust - `locust --host=http://35.195.11.75 -f locustio.py`
 
 # Notes
 
