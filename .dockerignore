@@ -2,3 +2,4 @@
 bin
 obj
 README.md
+__pycache__
