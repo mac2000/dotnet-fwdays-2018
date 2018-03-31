@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.NET fwdays'18</title>
+    <style>
+        :root {
+            --padding: 1em;
+            --main-color: #523A82;
+            --alt-color: #3dcc85;
+        }
+
+        html, body {
+            padding: 0;
+            margin: 0;
+            background: var(--main-color);
+            color: white;
+            height: 100vh;
+            overflow: hidden;
+            font: 100 24px/1.5 sans-serif;
+        }
+
+        body, main, header, footer {
+            display: flex;
+        }
+
+        body {
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+            justify-content: center;
+        }
+
+        header, footer {
+            padding: var(--padding);
+            justify-content: space-between;
+        }
+
+        button {
+            background: var(--alt-color);
+            appearance: none;
+            border: none;
+            padding: calc(var(--padding) / 2) var(--padding);
+            font: inherit;
+            color: inherit;
+        }
+
+        button:disabled {
+            opacity: .5;
+        }
+
+        .host:before {
+            content: '💻';
+        }
+
+        .time:before {
+            content: '⏱';
+        }
+
+        .host:before,
+        .time:before {
+            margin-right: calc(var(--padding) / 2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <span class="host"></span>
+        <span class="time"></span>
+    </header>
+    <main>
+        <img src="https://fwdays.com/uploads/events/Net_big.svg" alt=".NET fwdays'18" />
+    </main>
+    <footer>
+        <button data-uri="api/demo/ping">Ping</button>
+        <button data-uri="api/demo/load">Load CPU</button>
+        <button data-uri="api/demo/exit/0">Exit 0</button>
+        <button data-uri="api/demo/exit/1">Exit 1</button>
+    </footer>
+    <script>
+        const getText = uri => fetch(uri).then(r => r.text())
+        const getTime = () => getText('api/values/time').then(d => new Date(parseInt(d)).toLocaleTimeString())
+        const getHost = () => getText('api/values/host')
+        const setText = selector => text => document.querySelector(selector).innerText = text
+
+        getTime().then(setText('.time'))
+        getHost().then(setText('.host'))
+
+        document.addEventListener('click', ({target}) => {
+            if (!target || !target.getAttribute('data-uri')) {
+                return;
+            }
+
+            target.disabled = true
+            getText(target.getAttribute('data-uri'))
+                .then(text => text || 'done')
+                .then(alert)
+                .catch(alert)
+                .finally(() => target.disabled = false)
+        })
+    </script>
+</body>
+</html>
