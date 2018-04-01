@@ -54,22 +54,24 @@
 
         .host:before {
             content: '💻';
-        }
-
-        .time:before {
-            content: '⏱';
-        }
-
-        .host:before,
-        .time:before {
             margin-right: calc(var(--padding) / 2);
+        }
+
+        .time:after {
+            content: '⏱';
+            margin-left: calc(var(--padding) / 2);
+        }
+
+        .version {
+            text-align: center;
+            flex: 1;
         }
     </style>
 </head>
 <body>
     <header>
         <span class="host"></span>
-        <span>v1</span>
+        <span class="version">v1</span>
         <span class="time"></span>
     </header>
     <main>
