@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dotnet-fwdays-2018
+  labels:
+    app: dotnet-fwdays-2018
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: dotnet-fwdays-2018
+  template:
+    metadata:
+      labels:
+        app: dotnet-fwdays-2018
+    spec:
+      containers:
+      - name: dotnet-fwdays-2018
+        image: gcr.io/fwdays2018/github-mac2000-dotnet-fwdays-2018:b1f846446dcfef513b2ebf8aa5afebb1d01439ce
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
