@@ -14,4 +14,5 @@ class WebsiteUser(HttpLocust):
     min_wait = 5000
     max_wait = 30000
 
+# locust --host=http://localhost:5000 -f locustio.py
 # locust --host=http://35.195.11.75 -f locustio.py

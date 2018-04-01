@@ -5,7 +5,7 @@ metadata:
   labels:
     app: dotnet-fwdays-2018
 spec:
-  replicas: 5
+  replicas: 1
   selector:
     matchLabels:
       app: dotnet-fwdays-2018
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: dotnet-fwdays-2018
-        image: gcr.io/fwdays2018/github-mac2000-dotnet-fwdays-2018:b1f846446dcfef513b2ebf8aa5afebb1d01439ce
+        image: mac2000/dotnet-fwdays-2018
         imagePullPolicy: Always
         ports:
         - containerPort: 80
