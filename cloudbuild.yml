@@ -13,5 +13,5 @@ steps:
     args: ['set', 'image', 'deployment', 'dotnet-fwdays-2018', 'dotnet-fwdays-2018=gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA']
     env:
       - CLOUDSDK_COMPUTE_ZONE=europe-west1-b
-      - CLOUDSDK_CONTAINER_CLUSTER=kub
+      - CLOUDSDK_CONTAINER_CLUSTER=kube
 images: ['gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA']
