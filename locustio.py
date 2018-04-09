@@ -11,8 +11,8 @@ class UserBehavior(TaskSet):
 
 class WebsiteUser(HttpLocust):
     task_set = UserBehavior
-    min_wait = 5000
-    max_wait = 30000
+    min_wait = 10000
+    max_wait = 40000
 
 # locust --host=http://localhost:5000 -f locustio.py
 # locust --host=http://35.195.11.75 -f locustio.py
