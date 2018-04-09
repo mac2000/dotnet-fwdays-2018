@@ -101,3 +101,4 @@ kubectl create -f ../heapster/deploy/kube-config/influxdb/
 git clone https://github.com/kubernetes/kube-state-metrics
 kubectl apply -f kube-state-metrics/kubernetes/
 ```
+
