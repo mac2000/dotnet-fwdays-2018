@@ -12,4 +12,3 @@ steps:
       - CLOUDSDK_COMPUTE_ZONE=europe-west1-b
       - CLOUDSDK_CONTAINER_CLUSTER=kube
 images: ['gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA']
-
