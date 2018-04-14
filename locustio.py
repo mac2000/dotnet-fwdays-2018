@@ -15,4 +15,5 @@ class WebsiteUser(HttpLocust):
     max_wait = 40000
 
 # locust --host=http://localhost:5000 -f locustio.py
-# locust --host=http://35.195.11.75 -f locustio.py
+# locust --host=http://35.195.41.40 -f locustio.py
+# docker run -it --rm -p 8089:8089 mac2000/locust --host=http://35.195.41.40

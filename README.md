@@ -22,7 +22,9 @@ Fun way - dockerize it
 
 You can find sample docker file in this repo
 
-To build it run `docker build -t mac2000/dotnet-fwdays-2018 .`
+To build it run `
+
+ .`
 
 To run it `docker run -it --rm -p 5000:80 mac2000/dotnet-fwdays-2018`
 

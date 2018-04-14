@@ -7,6 +7,6 @@ spec:
     app: dotnet-fwdays-2018
   ports:
   - protocol: TCP
-    port: 5000
+    port: 80
     targetPort: 80
   type: LoadBalancer
