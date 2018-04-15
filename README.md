@@ -1,3 +1,51 @@
+# Dockerize
+
+```sh
+docker build -t mac2000/dotnet-fwdays-2018 .
+docker run -it --rm -p 5000:80 mac2000/dotnet-fwdays-2018
+docker push mac2000/dotnet-fwdays-2018
+```
+
+# Deployment
+
+```sh
+kubectl apply -f deployment.yml
+kubectl get deployment
+```
+
+# Service
+
+```sh
+kubectl apply -f service.yml
+kubectl get service
+```
+
+# State machine
+
+replicas - 3
+
+```sh
+kubectl apply -f deployment.yml
+kubectl get deployment
+```
+
+# AutoScale
+
+```sh
+kubectl apply -f autoscale.yml
+kubectl get hpa
+```
+
+# CI/CD
+
+```sh
+kubectl get deployment -w
+```
+
+push
+
+
+
 # I build an app
 
 So here we go, I have build an awesome dotnet core app.

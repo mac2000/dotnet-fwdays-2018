@@ -5,7 +5,7 @@ metadata:
   labels:
     app: dotnet-fwdays-2018
 spec:
-  replicas: 1
+  replicas: 5
   selector:
     matchLabels:
       app: dotnet-fwdays-2018
